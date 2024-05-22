@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,8 +9,8 @@
     @vite('resources/sass/app.scss')
 </head>
 
-<body>
-    {{-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+<body> --}}
+{{-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container">
             <a href="{{ route('home') }}" class="navbar-brand mb-0 h1"><i class="bi-hexagon-fill me-2"></i> Data
                 Master</a>
@@ -38,7 +38,7 @@
         </div>
     </nav> --}}
 
-    {{-- <div class="container mt-4">
+{{-- <div class="container mt-4">
         <h4>{{ $pageTitle }}</h4>
         <hr>
         <div class="d-flex align-items-center py-2 px-4 bg-light rounded-3 border">
@@ -46,14 +46,26 @@
             <h4 class="mb-0">Well done! this is {{ $pageTitle }}.</h4>
         </div>
     </div> --}}
-    @extends('layouts.app')
+{{-- @extends('layouts.app')
 
     @section('content')
         @include('default')
     @endsection
 
 
-    @vite('resources/js/app.js')
-</body>
+    @vite('resources/js/app.js') --}}
+{{-- </body>
 
-</html>
+</html> --}}
+
+@extends('layouts.app')
+@section('content')
+    @include('default')
+    <div class="p-6 m-20 bg-white rounded shadow">
+        {!! $chart->container() !!}
+    </div>
+
+    <script src="{{ $chart->cdn() }}"></script>
+
+    {{ $chart->script() }}
+@endsection
